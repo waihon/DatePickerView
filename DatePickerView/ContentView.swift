@@ -11,7 +11,11 @@ struct ContentView: View {
   @State private var wakeUp = Date()
   
   var body: some View {
-    DatePicker("Please enter a date", selection: $wakeUp, displayedComponents: .hourAndMinute)
+    let now = Date()
+    let tomorrow = Date().addingTimeInterval(24 * 60 * 60)
+    let range = now ... tomorrow
+
+    DatePicker("Please enter a date", selection: $wakeUp, in: range)
   }
 }
 
