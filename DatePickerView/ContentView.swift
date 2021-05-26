@@ -11,7 +11,9 @@ struct ContentView: View {
   @State private var wakeUp = Date()
   
   var body: some View {
-    DatePicker("", selection: $wakeUp)
+    Form {
+      DatePicker("Please enter a date", selection: $wakeUp)
+    }
   }
 }
 
